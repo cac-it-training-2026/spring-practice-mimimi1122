@@ -1,5 +1,13 @@
 package jp.co.sss.practice.p05.repository;
 
-public interface FruitsSeasonRepository {
+import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import jp.co.sss.practice.p05.entity.FruitsSeason;
+
+public interface FruitsSeasonRepository
+		extends JpaRepository<FruitsSeason, Integer> {
+	//全件検索、並び替えSeasonMonthを昇順に
+	List<FruitsSeason> findAllByOrderBySeasonMonthAsc();
 }
